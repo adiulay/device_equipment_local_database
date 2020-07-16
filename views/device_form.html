@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="/bootstrap-css/bootstrap.min.css">
+    <link rel="stylesheet" href="/jquery-ui/jquery-ui.min.css">
+    <!-- <script>
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+    </script> -->
+</head>
+
+<body>
+    <div class="container text-center">
+
+        <h1 id="form_type"><%= type %></h1>
+
+        <!-- forms -->
+        <form id="formDevice" enctype="application/x-www-form-urlencoded">
+
+            <div class="form-group row">
+                <label for="ID" class="col col-form-label">ID:</label>
+                <div class="col">
+                    <input type="text" id="ID" name="ID">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="date" class="col col-form-label">Date:</label>
+                <div class="col">
+                    <input type="text" id="date" name="date"><br>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="zone" class="col col-form-label">Zone:</label>
+                <div class="col">
+                    <select name="zone" id="zone">
+                        <option selected="selected">green</option>
+                        <option>black</option>
+                        <option>orange</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="model" class="col col-form-label">Model:</label>
+                <div class="col">
+                    <input type="text" id="model" name="model"><br>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="description" class="col col-form-label">Description:</label>
+                <div class="col">
+                    <input type="text" id="description" name="description">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname" class="col col-form-label">First name:</label>
+                <div class="col">
+                    <input type="text" id="fname" name="fname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="lname" class="col col-form-label">Last name:</label>
+                <div class="col">
+                    <input type="text" id="lname" name="lname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="onboarding" class="col col-form-label">Onboarding:</label>
+                <div class="col">
+                    <select name="onboarding" id="onboarding">
+                        <option selected="selected">yes</option>
+                        <option>no</option>
+                        <option>n/a</option>
+                      </select>
+                </div>
+            </div>
+
+            <input type="submit" id="submit" value="<%= submit_type %>">
+        </form>
+        <br>
+
+        <!-- dialogs -->
+        <div id="add-device-confirm" title="Are you are?">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Please make sure information is correct. Are you sure?</p>
+        </div>
+
+        <div id="missing-information" title="Missing">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Missing inputs if wanted blank, specify N/A</p>
+        </div>
+
+        <div title="Result">
+            <p id="add-result"><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Device deleted</p>
+        </div>
+
+        <button type="button" id="close">Close</button>
+    </div>
+    </div>
+
+</body>
+
+<script src="/jquery/jquery.js"></script>
+<script src="/jquery-ui/jquery-ui.min.js"></script>
+<script src="/jquery/functions.js"></script>
+<script src="/bootstrap-js/bootstrap.min.js"></script>
+
+</html>
